@@ -85,9 +85,13 @@ Serving HTTP on 0.0.0.0 port 8000 ...
 
 4、部署node。在每个node上分别执行脚本就即可。
 ```
-# curl -L http://172.60.0.43:8000/k8s-deploy.sh |  bash -s join --token=3635d0.6d0caa140b219bc0 172.60.0.87   	这里的token就是部署master01完成后记录下的token
+# curl -L http://172.60.0.43:8000/k8s-deploy.sh |  bash -s join --token=3635d0.6d0caa140b219bc0 172.60.0.87   	
 ```
+
+这里的token就是部署master01完成后记录下的token。
+
 加入集群时，这里有可能会报 refuse 错误，将 kube-discovery 扩容到三个副本即可。
+
 ```
 # kubectl scale deployment --replicas 3 kube-discovery -n kube-system 
 ```
