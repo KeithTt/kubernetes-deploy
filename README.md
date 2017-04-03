@@ -19,7 +19,7 @@
 
 ![](http://kubernetes.io/images/docs/ha.svg)
 
-## installation guide
+## Installation guide
 
 1、在一台单独的server上启动一个http-server，用来存放image和rpm包等文件，脚本会从此处拉取文件。
 ```
@@ -85,7 +85,8 @@ Serving HTTP on 0.0.0.0 port 8000 ...
 
 4、部署node。在每个node上分别执行脚本就即可。
 ```
-# curl -L http://172.60.0.43:8000/k8s-deploy.sh |  bash -s join --token=3635d0.6d0caa140b219bc0 172.60.0.87   	
+# curl -L http://172.60.0.43:8000/k8s-deploy.sh | \
+	bash -s join --token=3635d0.6d0caa140b219bc0 172.60.0.87   	
 ```
 
 这里的token就是部署master01完成后记录下的token。
